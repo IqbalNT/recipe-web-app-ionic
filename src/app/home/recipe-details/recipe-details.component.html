@@ -1,0 +1,53 @@
+<ion-header color="dark">
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-back-button text="" icon="arrow-back-outline" color="light"></ion-back-button>
+      <ion-title> {{ recipeData.recipeTitle }}</ion-title>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" color="dark">
+  <div class="ion-padding">
+    <div style="padding:56.25% 0 0 0;position:relative;">
+      <iframe [src]="recipeData.videoLink | safe : 'resourceUrl'" frameborder="0"
+        allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+      </iframe>
+    </div>
+
+
+    <h2> {{ recipeData.recipeTitle }}</h2>
+    <ion-grid>
+      <ion-row class="ion-align-items-center ion-justify-content-center">
+        <ion-col size="4" class="ion-text-center">
+          <ion-icon name="heart-outline" class="custom-heart"></ion-icon>
+          <p>{{ recipeData.likeCount }} k</p>
+        </ion-col>
+        <ion-col size="4" class="ion-text-center">
+          <ion-icon name="time-outline" class="custom-time"></ion-icon>
+          <p>{{ recipeData.estimateTime }} min</p>
+        </ion-col>
+        <ion-col size="4" class="ion-text-center">
+          <ion-icon name="share-outline" class="custom-share"></ion-icon>
+          <p>Share</p>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <div>
+      <h4>Ingredients</h4>
+      <ul>
+        <li *ngFor="let item of recipeData.ingredients">{{ item }}</li>
+      </ul>
+    </div>
+    <div>
+      <h4>Instructions</h4>
+      <ol>
+        <li *ngFor="let item of recipeData.instructions">{{ item }}</li>
+      </ol>
+    </div>
+
+
+
+  </div>
+</ion-content>
