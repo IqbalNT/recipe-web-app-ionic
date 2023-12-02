@@ -1,13 +1,14 @@
 <ion-header color="dark">
   <ion-toolbar color="dark">
-    <ion-buttons slot="start">
-      <ion-back-button text="" icon="arrow-back-outline" color="light"></ion-back-button>
+    <ion-buttons class="ion-padding">
+      <ion-back-button text="" icon="arrow-back-outline" color="light" defaultHref="/home"></ion-back-button>
       <ion-title> {{ recipeData.recipeTitle }}</ion-title>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true" color="dark">
+
   <div class="ion-padding">
     <div style="padding:56.25% 0 0 0;position:relative;">
       <iframe [src]="recipeData.videoLink | safe : 'resourceUrl'" frameborder="0"
@@ -15,8 +16,13 @@
       </iframe>
     </div>
 
+    <!-- for iOS it will move to Top -->
+    <ion-header collapse="condense" color="dark">
+      <ion-toolbar color="dark">
+        <h2> {{ recipeData.recipeTitle }}</h2>
+      </ion-toolbar>
+    </ion-header>
 
-    <h2> {{ recipeData.recipeTitle }}</h2>
     <ion-grid>
       <ion-row class="ion-align-items-center ion-justify-content-center">
         <ion-col size="4" class="ion-text-center">
@@ -34,20 +40,19 @@
       </ion-row>
     </ion-grid>
 
-    <div>
+    <div id="Ingredients">
       <h4>Ingredients</h4>
       <ul>
         <li *ngFor="let item of recipeData.ingredients">{{ item }}</li>
       </ul>
     </div>
-    <div>
+
+    <div id="Instructions">
       <h4>Instructions</h4>
       <ol>
         <li *ngFor="let item of recipeData.instructions">{{ item }}</li>
       </ol>
     </div>
-
-
 
   </div>
 </ion-content>

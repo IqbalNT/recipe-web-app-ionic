@@ -22,12 +22,25 @@
   ion-card-header {
     margin: 0;
     padding: 0.5rem;
+
+    ion-card-title {
+      font-size: 20px !important;
+      padding-left: 0.5rem;
+    }
+
+    ion-card-subtitle {
+      font-size: 11px !important;
+      padding-left: 0.5rem;
+      font-weight: 100;
+      letter-spacing: 1.5px;
+      text-transform: capitalize !important;
+    }
   }
 }
 
 /* Ensure images fit within the card width */
 .custom-card img {
-  max-width: 100%;
+  width: 100%;
 }
 
 .pb-100 {
