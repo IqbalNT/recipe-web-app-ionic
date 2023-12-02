@@ -16,7 +16,6 @@ export class HomePage {
 
 
   onCardClick(recipe: IRecipe) {
-    // this.router.navigate([`home/recipe/${recipe.rId}`]);
     this.router.navigate(['home/recipe', recipe.rId], {
       state: {
         recipeData: recipe  // Pass the recipe object within the 'recipeData' key

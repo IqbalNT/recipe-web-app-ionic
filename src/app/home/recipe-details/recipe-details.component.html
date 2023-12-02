@@ -43,14 +43,14 @@
     <div id="Ingredients">
       <h4>Ingredients</h4>
       <ul>
-        <li *ngFor="let item of recipeData.ingredients">{{ item }}</li>
+        <li *ngFor="let ingredient of recipeData.ingredients">{{ ingredient }}</li>
       </ul>
     </div>
 
     <div id="Instructions">
       <h4>Instructions</h4>
       <ol>
-        <li *ngFor="let item of recipeData.instructions">{{ item }}</li>
+        <li *ngFor="let instruction of recipeData.instructions">{{ instruction }}</li>
       </ol>
     </div>
 
