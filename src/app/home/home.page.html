@@ -1,0 +1,21 @@
+<ion-header collapse="condense">
+  <ion-searchbar color="dark"></ion-searchbar>
+</ion-header>
+<ion-content [fullscreen]="true" color="dark">
+
+  <div class="ion-padding">
+    <div class="recipe" *ngFor="let cat of categories">
+      <h3>{{ cat.catTitle}}</h3>
+      <div class="card-container">
+        <ion-card class="custom-card" (click)="onCardClick(recipe)" *ngFor="let recipe of cat.recipes">
+          <img alt="Silhouette of mountains" [src]="recipe.img" />
+          <ion-card-header>
+            <ion-card-subtitle color="light">{{ recipe.recipeSubTitle}}</ion-card-subtitle>
+            <ion-card-title color="light">{{ recipe.recipeTitle}}</ion-card-title>
+          </ion-card-header>
+        </ion-card>
+      </div>
+    </div>
+  </div>
+
+</ion-content>
